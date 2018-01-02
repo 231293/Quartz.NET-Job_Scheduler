@@ -23,7 +23,6 @@ namespace Quartz.NET_Job_Scheduler
             {
                 _container = ConfigureContainer(new ContainerBuilder()).Build();
                 var assemblyName = typeof(Program).Assembly.GetName().Name;
-                ConfigureEndpoint();
 
                 HostFactory.Run(conf =>
                 {
@@ -55,13 +54,6 @@ namespace Quartz.NET_Job_Scheduler
             }
             Console.ReadKey();
         }
-
-        private static void ConfigureEndpoint()
-        {
-            var schedulerFactory = new StdSchedulerFactory();
-            var scheduler = schedulerFactory.GetScheduler();
-        }
-
         private static ContainerBuilder ConfigureContainer(ContainerBuilder builder)
         {
             builder.RegisterModule(new QuartzAutofacFactoryModule());
