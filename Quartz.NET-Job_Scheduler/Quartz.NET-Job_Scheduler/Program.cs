@@ -2,7 +2,6 @@
 using Autofac.Extras.Quartz;
 using log4net;
 using log4net.Config;
-using Quartz.Impl;
 using Quartz.Spi;
 using System;
 using Topshelf;
